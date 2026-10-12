@@ -47,7 +47,8 @@
     "prepublishOnly": "npm run typecheck && npm test && npm run build",
     "build:playground": "vite build playground",
     "preview": "vite preview playground",
-    "prepare": "tsup"
+    "prepare": "tsup",
+    "deploy:demo": "./scripts/deploy-demo.sh"
   },
   "peerDependencies": {
     "react": ">=18",

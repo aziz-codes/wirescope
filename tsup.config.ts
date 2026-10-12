@@ -12,15 +12,16 @@ type EsbuildPlugin = NonNullable<Options['esbuildPlugins']>[number]
 const inlineTailwind: EsbuildPlugin = {
   name: 'inline-tailwind',
   setup(build) {
+    // The resolved path keeps its `?inline` suffix so tsup's own CSS plugin
+    // (which matches /\.css$/) leaves it alone.
     build.onResolve({ filter: /\.css\?inline$/ }, (args) => ({
-      path: path.resolve(args.resolveDir, args.path.replace(/\?inline$/, '')),
+      path: path.resolve(args.resolveDir, args.path),
       namespace: 'inline-css',
     }))
     build.onLoad({ filter: /.*/, namespace: 'inline-css' }, async (args) => {
-      const source = await readFile(args.path, 'utf8')
-      const result = await postcss([tailwind({ optimize: { minify: true } })]).process(source, {
-        from: args.path,
-      })
+      const file = args.path.replace(/\?inline$/, '')
+      const source = await readFile(file, 'utf8')
+      const result = await postcss([tailwind({ optimize: { minify: true } })]).process(source, { from: file })
       return { contents: result.css, loader: 'text' }
     })
   },

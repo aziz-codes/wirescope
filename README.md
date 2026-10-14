@@ -1,5 +1,7 @@
 # wirescope
 
+[![npm](https://img.shields.io/npm/v/wirescope)](https://www.npmjs.com/package/wirescope)
+
 **An in-app network inspector and API explorer for React.** A small round button sits in the corner of your app; click it and a devtools panel slides up (think React Query Devtools, but for every request your app makes).
 
 - **Network**: every `fetch` and `XMLHttpRequest` (so axios too), live, with status, timing, size, headers, payload and a pretty JSON viewer. Filter, pause, clear, replay, or copy as cURL.
@@ -11,12 +13,6 @@
 
 ```bash
 npm i -D wirescope
-```
-
-Until it's published on npm, install straight from GitHub:
-
-```bash
-npm i -D github:aziz-codes/wirescope
 ```
 
 ## Usage

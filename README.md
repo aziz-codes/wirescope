@@ -9,6 +9,8 @@
 - **Stays out of the way**: rendered in a Shadow DOM, so its Tailwind styles never touch your app and yours never touch it. Resizable, full-screen mode, `Alt+Shift+W` to toggle.
 - **Zero config, zero runtime deps.** No CSS import needed. It's disabled in production builds by default.
 
+![wirescope network inspector](https://raw.githubusercontent.com/aziz-codes/wirescope/main/docs/screenshot.png)
+
 ## Install
 
 ```bash

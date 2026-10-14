@@ -4,6 +4,14 @@
   "description": "In-app network inspector and API explorer for React — like React Query Devtools, but for every request your app makes.",
   "license": "MIT",
   "author": "aziz-codes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aziz-codes/wirescope.git"
+  },
+  "homepage": "https://aziz-codes.github.io/wirescope/",
+  "bugs": {
+    "url": "https://github.com/aziz-codes/wirescope/issues"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
